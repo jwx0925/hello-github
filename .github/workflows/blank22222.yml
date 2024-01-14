@@ -6,8 +6,7 @@ name: CI-22222
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "jwx0925-patch-1" ]
-    branches-ignore: [ "release/**" ]
+branches: [ "jwx0925-patch-1" ]
     tags: ["test-*"]
   pull_request:
     branches: [ "master" ]
