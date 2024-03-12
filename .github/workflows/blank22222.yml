@@ -1,15 +1,15 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-22222
+name: CI-ccc
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    # branches: [ "jwx0925-patch-1" ]
-    tags: ["test-*"]
-  pull_request:
-    branches: [ "jwx0925-*","master"]
+    branches: 
+      - "test/**"
+    paths:
+      - '**.sh'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,4 +22,4 @@ jobs:
       - run: echo Hello, world!!!~~
       - run: |
           echo Add other actions to build,
-          echo test, and deploy your project.111
+          echo test, and deploy your project.xxxxx
