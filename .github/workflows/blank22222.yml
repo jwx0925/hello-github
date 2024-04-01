@@ -15,6 +15,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  multiply:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          param1: [1, 2]
+          param2: [3, 4]
+      steps:
+      - name: Print multiplication result
+        run: echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }} = $(( ${{ matrix.param1 }} * ${{ matrix.param2 }} ))"
   build:
     runs-on: ubuntu-latest
     steps:
