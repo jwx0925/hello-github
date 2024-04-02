@@ -19,11 +19,11 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         matrix:
-          param1: [100000000000000000000000, 2000000000000000000000]
-          param2: [300000000000000000000000, 4000000000000000000000]
+          param1: [100000000000000000000000d, 2000000000000000000000m]
+          param2: [300000000000000000000000d, 4000000000000000000000f]
       steps:
       - name: Print multiplication result
-        run: echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }} = $(( ${{ matrix.param1 }} * ${{ matrix.param2 }} ))"
+        run: echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}"
   build:
     runs-on: ubuntu-latest
     steps:
