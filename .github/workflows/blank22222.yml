@@ -26,9 +26,17 @@ jobs:
         run: echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}"
   build:
     runs-on: ubuntu-latest
+    needs: multiply
     steps:
       - uses: actions/checkout@v3
       - run: echo Hello, world!!!~~
       - run: |
           echo Add other actions to build,
-          echo test, and deploy your project.111
+  build-1:
+    runs-on: ubuntu-latest
+    needs: [build,multiply]
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo Hello, world!!!~~
+      - run: |
+          echo Add other actions to build,
