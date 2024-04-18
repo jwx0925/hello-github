@@ -28,8 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-      # - uses: actions/checkout@v3
-      - run: pwd
+      - uses: actions/checkout@v3
+        with: 
+          path: example_repo
+      - run: |
+          pwd
+          tree
       - run: |
           echo Add other actions to build,
           echo test, and deploy your project.111
