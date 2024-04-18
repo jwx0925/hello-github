@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
       - run: pwd
       - run: |
           echo Add other actions to build,
