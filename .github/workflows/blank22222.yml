@@ -27,9 +27,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          cd ..
+          touch hello.txt
+          echo abc > hello.txt
       - uses: actions/checkout@v3
       - run: echo Hello, world!!!~~
       - run: |
           echo $GITHUB_WORKSPACE
+          cd ..
+          cat hello.txt
           echo Add other actions to build,
           echo test, and deploy your project.111
