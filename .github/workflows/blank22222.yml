@@ -18,17 +18,18 @@ jobs:
   multiply:
       runs-on: ubuntu-latest
       outputs:
-        output1: ${{ steps.step1.outputs.test }}
+        output1: ${{ steps.step1.outputs.arm }}
+        output2: ${{ steps.step1.outputs.x86 }}
       strategy:
         matrix:
-          param1: [100000000000000000000000d, 2000000000000000000000m]
-          param2: [300000000000000000000000d, 4000000000000000000000f]
+          param1: [arm, x86]
+          param2: [xixi, haha]
       steps:
       - name: Print multiplication result
         id: step1
         run: |
-          echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}" 
-          echo "test=${{ matrix.param1 }} x ${{ matrix.param2 }}" >> "$GITHUB_OUTPUT"
+          echo "The result of ${{ matrix.param1 }} - ${{ matrix.param2 }}" 
+          echo "${{ matrix.param1 }}=${{ matrix.param2 }}" >> "$GITHUB_OUTPUT"
   build:
     runs-on: ubuntu-latest
     needs: multiply
@@ -38,6 +39,7 @@ jobs:
       - run: |
           echo Add other actions to build,
           echo ${{ needs.multiply.outputs.output1 }}
+          echo ${{ needs.multiply.outputs.output2 }}
   build-0:
     runs-on: ubuntu-latest
     needs: multiply
