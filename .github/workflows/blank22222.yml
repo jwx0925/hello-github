@@ -27,7 +27,8 @@ jobs:
       - name: Print multiplication result
         id: step1
         run: |
-          echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}" >> "$GITHUB_OUTPUT"
+          echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}" 
+          echo "test" >> "$GITHUB_OUTPUT"
   build:
     runs-on: ubuntu-latest
     needs: multiply
