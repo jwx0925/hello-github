@@ -37,7 +37,7 @@ jobs:
       - run: echo Hello, world!!!~~
       - run: |
           echo Add other actions to build,
-          echo ${{ jobs.multiply.outputs.output1 }}
+          echo ${{ needs.multiply.outputs.output1 }}
   build-0:
     runs-on: ubuntu-latest
     needs: multiply
