@@ -17,13 +17,18 @@ on:
 jobs:
   multiply:
       runs-on: ubuntu-latest
+      outputs:
+        output1: ${{ steps.step1.outputs.test }}
       strategy:
         matrix:
           param1: [100000000000000000000000d, 2000000000000000000000m]
           param2: [300000000000000000000000d, 4000000000000000000000f]
       steps:
       - name: Print multiplication result
-        run: echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}"
+        id: step1
+        run: |
+          echo "The result of ${{ matrix.param1 }} x ${{ matrix.param2 }}"
+          echo "${{ matrix.param1 }=${{ matrix.param2 }}" >> "$GITHUB_OUTPUT"
   build:
     runs-on: ubuntu-latest
     needs: multiply
@@ -32,7 +37,7 @@ jobs:
       - run: echo Hello, world!!!~~
       - run: |
           echo Add other actions to build,
-          exit 1
+          echo ${{ jobs.multiply.outputs.output1 }}
   build-0:
     runs-on: ubuntu-latest
     needs: multiply
