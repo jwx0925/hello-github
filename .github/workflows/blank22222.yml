@@ -62,5 +62,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo Hello, world!!!~~
-      - run: |
+      - id: summary-1
+        run: |
           echo Add other actions to build,
+          echo "### Hello world222! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - id: summary-2
+        run: |
+          echo Add other actions to build,
+          echo "### Hello world111! :rocket:" >> $GITHUB_STEP_SUMMARY
