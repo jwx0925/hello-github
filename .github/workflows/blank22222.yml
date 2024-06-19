@@ -70,3 +70,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo "### Hello world111! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "<button type="button" onclick=\"alert('Hello, World')\">点击我</button>" >> $GITHUB_STEP_SUMMARY
