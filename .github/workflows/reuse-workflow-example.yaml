@@ -6,3 +6,9 @@ on:
 jobs:
   workflowA-calls-workflowB:
     uses: ./.github/workflows/reuse-workflow-output.yaml
+
+  job4:
+    runs-on: ubuntu-latest
+    needs: workflowA-calls-workflowB
+    steps:
+      - run: echo 'hello'
