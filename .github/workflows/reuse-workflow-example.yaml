@@ -5,4 +5,4 @@ on:
 
 jobs:
   workflowA-calls-workflowB:
-    uses: ./.github/workflows/reuse-workflow.yaml
+    uses: ./.github/workflows/reuse-workflow-output.yaml
