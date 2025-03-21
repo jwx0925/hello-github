@@ -1,0 +1,8 @@
+name: Reusable workflow example
+
+on:
+  push: 
+
+jobs:
+  workflowA-calls-workflowB:
+    uses: ./.github/workflows/reuse-workflow.yaml@jwx0925-patch-9
